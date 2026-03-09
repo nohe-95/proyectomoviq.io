@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MoviQ | Noticias, recomendaciones y estrenos de cine</title>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="links container-fluid d-flex flex-wrap align-items-center justify-content-between">
+
+    <img src="img/moviqlogo.png" alt="logo" class="img-logo" width="130px">
+
+
+    <a class="active" href="#inicio">Inicio</a>
+
+
+    <div class="dropdown">
+
+        <button class="dropbtn">
+
+			<a class="nav-link" href="../generos/generos.html">Generos</a>
+        </button>
+		
+
+    </div>
+
+
+    <a href="#recomendaciones">Recomendaciones</a>
+	
+	<div class="dropdown">
+
+        <button class="dropbtn">
+			<a href="../premios/Premios y Eventos.html">Premio Óscar</a>
+
+        </button>
+		
+
+    </div>
+
+
+
+    <a href="#noticias">Noticias</a>
+
+
+    <input type="text" placeholder="Search..">
+
+</nav>
+
+</header>
+
+
+
+<section id="hero">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-info">
+
+            <h1 id="movietitle">Love Me Love Me</h1>
+
+            <p id="movieDesc">
+                Tras perder a su hermano, June ingresa a una escuela elite en Italia.
+                Se encuentra entre James, un peleador problemático, y su amigo Will,
+                un estudiante modelo, mientras secretos salen a la luz.
+            </p>
+
+            <a href="#" class="boton-review">VER REVIEW</a>
+
+        </div>
+
+
+
+        <div class="hero-thumbs">
+
+            <h3>NUEVO</h3>
+
+            <div class="thumbs-row">
+
+                <img class="thumb active"
+                     src="img/miniaturahamnet.jpeg"
+                     data-bg="img/hamnetfondo.jpg"
+                     data-title="Hamnet"
+                     data-desc="Una historia íntima sobre amor, pérdida y memoria."
+                     alt="Hamnet">
+
+
+                <img class="thumb"
+                     src="img/miniaturalovemeloveme.jpg"
+                     data-bg="img/Lovelovefondofondo.png"
+                     data-title="Love Me Love Me"
+                     data-desc="June entra a una escuela elite en Italia, y secretos salen a la luz."
+                     alt="Love Me Love Me">
+
+
+                <img class="thumb"
+                     src="img/crime101miniatura.jpg"
+                     data-bg="img/cm1fondo2.webp"
+                     data-title="Crime 101"
+                     data-desc="Un detective persigue una serie de robos perfectamente planeados."
+                     alt="Crime 101">
+
+
+                <img class="thumb"
+                     src="img/miniaturawuthering.jpg"
+                     data-bg="img/wutheringfondo.jpeg"
+                     data-title="Wuthering Heights"
+                     data-desc="Un drama clásico de amor intenso y tragedia."
+                     alt="Wuthering Heights">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="noticias" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">Noticias</h2>
+
+
+        <div class="row">
+
+            
+
+            <article class="col-lg-4 col-md-6 mb-4">
+
+                <img src="img/noticia-oscars.jpg" class="img-fluid rounded mb-3" alt="Oscars">
+
+                <h4>Los Premios Óscar anuncian sus nominaciones</h4>
+
+                <p>
+                    La Academia reveló las nominaciones a los Premios Óscar 2026.
+                    Varias producciones independientes lideran la lista de
+                    candidaturas este año.
+                </p>
+
+            </article>
+
+
+            
+
+            <article class="col-lg-4 col-md-6 mb-4">
+
+                <img src="img/Los4Fantásticos-estreno.jpg" class="img-fluid rounded mb-3" alt="Estreno de película">
+
+                <h4>Nuevo estreno rompe récord en taquilla</h4>
+
+                <p>
+                    Los 4 Fantásticos ha tenido un estreno destacado recaudando 218 millones de dólares a nivel mundial en su primer fin de semana, con 118 millones de provinientes de Estados Unidos.
+                </p>
+
+            </article>
+
+
+         
+
+            <article class="col-lg-4 col-md-6 mb-4">
+
+                <img src="img/oppenheimer-premiere.jpg" class="img-fluid rounded mb-3" alt="Premiere">
+
+                <h4>Oppenheimer sigue marcando tendencia en el cine contemporáneo</h4>
+
+                <p>
+                    La pelicula <strong> Oppenheimer </strong>, dirigida por Christopher Nolan, continúa siendo una referencia importante dentro del cine moderno, gracias a su impacto cultutal y cinematográfico. 
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container text-center">
+
+        <p>© 2026 MoviQ | Noticias y recomendaciones de cine</p>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    const hero = document.getElementById("hero");
+    const title = document.getElementById("movietitle");
+    const desc = document.getElementById("movieDesc");
+    const thumbs = document.querySelectorAll(".thumb");
+
+    hero.style.backgroundImage = "url('img/hamnetfondo.jpg')";
+
+    thumbs.forEach(thumb => {
+
+        thumb.addEventListener("click", () => {
+
+            thumbs.forEach(t => t.classList.remove("active"));
+
+            thumb.classList.add("active");
+
+            const newbackground = thumb.getAttribute("data-bg");
+
+            hero.style.backgroundImage = `url('${newbackground}')`;
+
+            title.textContent = thumb.getAttribute("data-title");
+
+            desc.textContent = thumb.getAttribute("data-desc");
+
+        });
+
+    });
+
+</script>
+
+
+
+</body>
+</html>
