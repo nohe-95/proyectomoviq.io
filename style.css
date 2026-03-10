@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+	--color-primary:#c60102;
+	--color-body:#fff;
+	--color-background:#000;
+	--color-btn:#c60102;
+}
+
+.navbar-brand{
+	width: 80px;
+	height: auto;
+}
+
+body{
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	color: var(--color-body);
+	line-height: 1.7;
+	background-color: var(--color-background);
+}
+
+header{
+	background-color: var(--color-background);
+}
+
+
+
+#hero{
+    position:relative;
+    min-height:100vh;
+    background-image:url("../img/loveme-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
+    color:white;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to right,
+        rgba(0,0,0,0.90) 0%,
+        rgba(0,0,0,0.55) 45%,
+        rgba(0,0,0,0.15) 100%
+    );
+    z-index:1;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-info{
+    width:520px;
+    padding:45px 45px;
+    border-radius:0 28px 28px 0;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+    height:calc(100vh - 80px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero-info h1{
+    font-size:75px;
+    line-height:0.95;
+    margin:0 0 20px;
+    font-weight:800;
+}
+
+.hero-info p{
+    font-size:15px;
+    line-height:1.6;
+    opacity:0.9;
+    margin-bottom:28px;
+    max-width:420px;
+}
+
+.boton-review{
+    display:inline-block;
+    background:#e50914;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:700;
+    font-size:14px;
+    margin-top:20px;
+    transition:all .25s ease;
+}
+
+.boton-review:hover{
+    background:#b20710;
+    transform:scale(1.05);
+}
+
+.boton-review:visited{
+    color:white;
+}
+
+.hero-thumbs{
+    width:520px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    gap:14px;
+    margin-right:260px;
+    margin-bottom:150px;
+}
+
+.hero-thumbs h3{
+    margin:0;
+    font-size:22px;
+    font-weight:800;
+}
+
+.thumbs-row{
+    display:flex;
+    gap:30px;
+    align-items:flex-end;
+}
+
+.thumb{
+    width:210px;
+    height:240px;
+    object-fit:cover;
+    border-radius:14px;
+    transition:0.25s;
+    border:2px solid transparent;
+    opacity:0.85;
+}
+
+.thumb:hover{
+    transform:translateY(-8px) scale(1.05);
+    opacity:1;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.thumb.active{
+    border:2px solid #e50914;
+    opacity:1;
+    transform:translateY(-10px);
+}
+
+#noticias{
+background:#111;
+color:white;
+}
+
+#noticias h2{
+font-weight:700;
+}
+
+#noticias article{
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+transition:.3s;
+}
+
+#noticias article:hover{
+transform:translateY(-5px);
+}
+
+footer{
+    background:#000;
+    color:white;
+    padding:20px;
+    margin-top:40px;
+    text-align:center;
+}
+
+footer p{
+    color:white !important;
+    margin:0;
+}
